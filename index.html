@@ -95,8 +95,8 @@ tailwind.config = {
 <main id="top">
 <!-- ===== HERO ===== -->
 <section class="relative">
-  <div class="max-w-container mx-auto px-5 md:px-10 pt-12 md:pt-20 pb-10 grid lg:grid-cols-12 gap-10 items-center">
-    <div class="lg:col-span-6">
+  <div class="max-w-container mx-auto px-5 md:px-10 pt-12 md:pt-20 pb-10 grid lg:grid-cols-[6fr_7fr] gap-10 items-center">
+    <div>
       <p class="label text-claret text-xs mb-5">Annahilt · County Down · Est. 1979</p>
       <h1 class="font-serif font-medium text-ink leading-[0.98] tracking-tight" style="font-size:clamp(46px,6.5vw,86px);">A warm table,<br/>set since 1979.</h1>
       <p class="mt-7 text-lg md:text-xl text-ink-soft leading-relaxed max-w-xl">Four decades of proper hospitality from the Patterson family. Roasts from the Bertha wood-fired oven, fresh coastal seafood, and a fire in the hearth — in the heart of the County Down countryside.</p>
@@ -116,9 +116,9 @@ tailwind.config = {
         <span>Michelin <em class="font-serif">Eating Out in Pubs</em> guide</span>
       </div>
     </div>
-    <div class="lg:col-span-6">
+    <div>
       <div class="relative">
-        <div id="hero-carousel" class="overflow-hidden rounded-[3px] shadow-[0_30px_60px_-30px_rgba(42,37,32,0.55)] relative h-[clamp(340px,46vw,560px)] cursor-pointer select-none">
+        <div id="hero-carousel" class="overflow-hidden rounded-xl shadow-[0_30px_60px_-30px_rgba(42,37,32,0.55)] relative aspect-[4/3] cursor-pointer select-none">
           <img src="images/new main image.png" alt="Food spread at The Pheasant" class="hero-slide absolute inset-0 w-full h-full object-cover img-warm opacity-100"/>
           <img src="images/steak_peppercorn.jpeg" alt="Butcher's Block Steaks" class="hero-slide absolute inset-0 w-full h-full object-cover img-warm opacity-0"/>
           <img src="images/burger.jpeg" alt="The Bertha wood-fired oven" class="hero-slide absolute inset-0 w-full h-full object-cover img-warm opacity-0"/>
@@ -180,7 +180,7 @@ tailwind.config = {
       </a>
     </div>
     <div class="lg:col-span-8 grid sm:grid-cols-2 gap-6">
-      <article class="ph-card bg-charcoal-card border border-ink/15 overflow-hidden reveal">
+      <article class="ph-card bg-charcoal-card border border-ink/15 overflow-hidden rounded-xl reveal">
         <img src="images/steak_peppercorn.jpeg" alt="Prime steak on slate" class="w-full h-52 object-cover img-warm"/>
         <div class="p-6">
           <h3 class="font-serif text-2xl text-ink">Butcher's Block Steaks</h3>
@@ -188,7 +188,7 @@ tailwind.config = {
           <p class="text-ink-soft leading-relaxed">Prime cuts cooked over flame, served on the board with all the trimmings.</p>
         </div>
       </article>
-      <article class="ph-card bg-charcoal-card border border-ink/15 overflow-hidden reveal">
+      <article class="ph-card bg-charcoal-card border border-ink/15 overflow-hidden rounded-xl reveal">
         <img src="images/seafood_menu.jpg" alt="Simply Seafood" class="w-full h-52 object-cover img-warm"/>
         <div class="p-6">
           <h3 class="font-serif text-2xl text-ink">Simply Seafood</h3>
@@ -196,7 +196,7 @@ tailwind.config = {
           <p class="text-ink-soft leading-relaxed">A five-course coastal menu with paired wines and a welcome drink on arrival.</p>
         </div>
       </article>
-      <article class="ph-card bg-charcoal-card border border-ink/15 overflow-hidden reveal">
+      <article class="ph-card bg-charcoal-card border border-ink/15 overflow-hidden rounded-xl reveal">
         <img src="images/burger.jpeg" alt="Bertha wood-fired oven" class="w-full h-52 object-cover img-warm"/>
         <div class="p-6">
           <h3 class="font-serif text-2xl text-ink">The Bertha Oven</h3>
@@ -204,7 +204,7 @@ tailwind.config = {
           <p class="text-ink-soft leading-relaxed">Meat and seafood roasted in our wood-burning oven for deep, natural flavour.</p>
         </div>
       </article>
-      <article class="ph-card bg-charcoal-card border border-ink/15 overflow-hidden reveal">
+      <article class="ph-card bg-charcoal-card border border-ink/15 overflow-hidden rounded-xl reveal">
         <img src="images/roast.jpeg" alt="Sunday roast spread" class="w-full h-52 object-cover img-warm"/>
         <div class="p-6">
           <h3 class="font-serif text-2xl text-ink">Sunday Roast</h3>
@@ -224,26 +224,25 @@ tailwind.config = {
         <p class="label text-claret text-xs mb-3">What's On</p>
         <h2 class="font-serif text-4xl md:text-5xl text-ink">Reasons to visit</h2>
       </div>
-      <p class="text-ink-soft max-w-sm reveal">Ongoing favourites and ways to bring The Pheasant home with you.</p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <article class="bg-charcoal-card border border-ink/15 p-7 flex flex-col reveal">
+      <article class="bg-charcoal-card border border-ink/15 p-7 flex flex-col rounded-xl reveal">
         <span class="label text-[10px] text-gold mb-3">Takeaway</span>
         <h3 class="font-serif text-2xl text-ink mb-2">Gamekeeper's Hatch</h3>
         <p class="text-ink-soft leading-relaxed flex-1">Signature dishes to take home — from hearty game to succulent roasts.</p>
         <a href="https://pay.yoello.com/v/pheasant1" target="_blank" rel="noreferrer" class="mt-5 label text-[11px] text-claret hover:text-claret-deep inline-flex items-center gap-2">Order Online →</a>
       </article>
-      <article class="bg-charcoal-card border border-ink/15 p-7 flex flex-col reveal">
+      <article class="bg-charcoal-card border border-ink/15 p-7 flex flex-col rounded-xl reveal">
         <span class="label text-[10px] text-gold mb-3">Gifting</span>
         <h3 class="font-serif text-2xl text-ink mb-2">Gift Vouchers</h3>
         <p class="text-ink-soft leading-relaxed flex-1">The perfect present, in a range of values — for menus or drinks.</p>
         <a href="https://thepheasantrestaurant.giftpro.co.uk/vouchers/monetary-voucher/" target="_blank" rel="noreferrer" class="mt-5 label text-[11px] text-claret hover:text-claret-deep inline-flex items-center gap-2">Buy a Voucher →</a>
       </article>
-      <article class="bg-forest text-cream p-7 flex flex-col reveal">
+      <article class="bg-charcoal-card border border-ink/15 text-ink p-7 flex flex-col rounded-xl reveal">
         <span class="label text-[10px] text-gold-soft mb-3">Midweek</span>
         <h3 class="font-serif text-2xl mb-2">Early Bird</h3>
-        <p class="text-cream/75 leading-relaxed flex-1">Two and three-course menus at gentle prices, Tuesday to Friday.</p>
-        <a href="tel:02892638056" class="mt-5 label text-[11px] text-gold-soft hover:text-cream inline-flex items-center gap-2">Call to Book →</a>
+        <p class="text-ink-soft leading-relaxed flex-1">Two and three-course menus at gentle prices, Tuesday to Friday.</p>
+        <a href="tel:02892638056" class="mt-5 label text-[11px] text-claret hover:text-claret-deep inline-flex items-center gap-2">Call to Book →</a>
       </article>
     </div>
   </div>
@@ -261,17 +260,17 @@ tailwind.config = {
     </div>
   </div>
   <div class="grid md:grid-cols-3 gap-6">
-    <figure class="bg-charcoal-card border border-ink/15 p-8 reveal">
+    <figure class="bg-charcoal-card border border-ink/15 p-8 rounded-xl reveal">
       <div class="text-gold mb-4">★★★★★</div>
       <blockquote class="font-serif text-xl leading-relaxed text-ink italic">"Excellent food and a warm, welcoming atmosphere. Every dish was perfectly prepared. Our firm favourite for special occasions."</blockquote>
       <figcaption class="label text-[10px] text-ink-soft mt-5">— Google Review</figcaption>
     </figure>
-    <figure class="bg-charcoal-card border border-ink/15 p-8 reveal">
+    <figure class="bg-charcoal-card border border-ink/15 p-8 rounded-xl reveal">
       <div class="text-gold mb-4">★★★★★</div>
       <blockquote class="font-serif text-xl leading-relaxed text-ink italic">"The best restaurant in County Down. Fresh, locally sourced, and the Bertha oven dishes are incredible. Always friendly service."</blockquote>
       <figcaption class="label text-[10px] text-ink-soft mt-5">— Google Review</figcaption>
     </figure>
-    <figure class="bg-charcoal-card border border-ink/15 p-8 reveal">
+    <figure class="bg-charcoal-card border border-ink/15 p-8 rounded-xl reveal">
       <div class="text-gold mb-4">★★★★★</div>
       <blockquote class="font-serif text-xl leading-relaxed text-ink italic">"Lovely visit for a family celebration. The private dining space was perfect and the team incredibly helpful. Rustic charm, high standards."</blockquote>
       <figcaption class="label text-[10px] text-ink-soft mt-5">— Google Review</figcaption>
@@ -283,7 +282,7 @@ tailwind.config = {
 <section id="events" class="scroll-mt-24 bg-forest-deep soft-edge text-cream">
   <div class="max-w-container mx-auto px-5 md:px-10 py-20 md:py-28 grid lg:grid-cols-2 gap-12 items-center">
     <div class="reveal">
-      <div class="overflow-hidden rounded-[3px]">
+      <div class="overflow-hidden rounded-xl">
         <img src="images/gamekeepers_loft_real.jpeg" alt="The Gamekeeper's Loft event space" class="w-full h-[clamp(300px,38vw,460px)] object-cover img-warm"/>
       </div>
     </div>
@@ -322,7 +321,7 @@ tailwind.config = {
         <h2 class="font-serif text-4xl md:text-5xl text-ink mb-4">Come and visit</h2>
         <p class="text-ink-soft text-lg leading-relaxed">410 Upper Ballynahinch Road,<br/>Annahilt, BT26 6NR</p>
       </div>
-      <div class="bg-charcoal-card border border-ink/15 p-7">
+      <div class="bg-charcoal-card border border-ink/15 p-7 rounded-xl">
         <h3 class="font-serif text-2xl text-ink mb-4">Opening Hours</h3>
         <div class="space-y-3 text-ink">
           <div class="flex items-end"><span class="label text-[11px] text-ink-soft">Tue – Thu</span><span class="dot-leader"></span><span class="font-serif text-lg">12pm – 8pm</span></div>
