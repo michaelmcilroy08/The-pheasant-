@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reservations &amp; Events | The Pheasant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Libre+Franklin:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0f0e0a",
+                        "background": "#141310",
+                        "on-primary-fixed-variant": "#7e283b",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#251a00",
+                        "primary-container": "#711e32",
+                        "error": "#ffb4ab",
+                        "secondary": "#dbc496",
+                        "on-primary-fixed": "#400013",
+                        "on-secondary-fixed-variant": "#544521",
+                        "deep-onyx": "#0B0B0B",
+                        "tertiary": "#e5c191",
+                        "surface-variant": "#363530",
+                        "on-secondary-container": "#c9b385",
+                        "outline-variant": "#554244",
+                        "secondary-fixed": "#f8e0b0",
+                        "surface-bright": "#3b3934",
+                        "on-background": "#e7e2db",
+                        "tertiary-fixed-dim": "#e5c191",
+                        "on-surface-variant": "#dac0c3",
+                        "on-tertiary-container": "#c5a375",
+                        "on-tertiary": "#422c09",
+                        "on-surface": "#e7e2db",
+                        "surface-tint": "#ffb2bc",
+                        "primary": "#ffb2bc",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#5b421e",
+                        "tertiary-container": "#503915",
+                        "outline": "#a28b8d",
+                        "surface-container-low": "#1d1c17",
+                        "secondary-container": "#544521",
+                        "surface-container-high": "#2b2a26",
+                        "inverse-surface": "#e7e2db",
+                        "tertiary-fixed": "#ffddb3",
+                        "primary-fixed-dim": "#ffb2bc",
+                        "on-primary": "#601026",
+                        "secondary-fixed-dim": "#dbc496",
+                        "vintage-wine": "#711E32",
+                        "on-error": "#690005",
+                        "on-secondary": "#3c2e0d",
+                        "warm-parchment": "#F8F3EC",
+                        "on-tertiary-fixed": "#291800",
+                        "surface-container-highest": "#363530",
+                        "inverse-on-surface": "#32302c",
+                        "surface-dim": "#141310",
+                        "surface-container": "#21201b",
+                        "muted-gold": "#C6B083",
+                        "primary-fixed": "#ffd9dd",
+                        "on-primary-container": "#f68699",
+                        "surface": "#141310",
+                        "inverse-primary": "#9c3f52"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "section-gap": "120px",
+                        "stack-md": "16px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "menu-item": ["Playfair Display"],
+                        "label-caps": ["Libre Franklin"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["Libre Franklin"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Libre Franklin"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "menu-item": ["20px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .dot-leader {
+            flex-grow: 1;
+            border-bottom: 1px dotted #C6B083;
+            margin: 0 12px;
+            opacity: 0.3;
+        }
+        .glass-panel {
+            background: rgba(20, 19, 16, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(198, 176, 131, 0.2);
+        }
+    </style>
+</head>
+<body id="top" class="bg-background text-on-background font-body-md overflow-x-hidden scroll-smooth">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full bg-background/90 dark:bg-background/90 backdrop-blur-xl border-b border-muted-gold/20 z-50">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-on-background uppercase tracking-widest" href="#top">
+                The Pheasant
+            </a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#menu">The Menu</a>
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#wine">Wine List</a>
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#offers">Offers</a>
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#story">Our Story</a>
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#private-dining">Private Dining</a>
+<a class="ml-stack-lg bg-vintage-wine text-warm-parchment px-8 py-3 font-label-caps uppercase transition-all hover:brightness-110 active:opacity-80" href="#reservations">
+                    Reservations
+                </a>
+</div>
+<button id="mobile-menu-button" class="md:hidden text-primary" aria-expanded="false" aria-controls="mobile-menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<div id="mobile-menu" class="hidden md:hidden px-margin-mobile pb-stack-lg max-w-container-max mx-auto">
+<div class="flex flex-col gap-stack-md border-t border-muted-gold/10 pt-stack-md">
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#menu">The Menu</a>
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#wine">Wine List</a>
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#offers">Offers</a>
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#story">Our Story</a>
+<a class="font-menu-item text-menu-item text-on-background hover:text-muted-gold transition-colors duration-300" href="#private-dining">Private Dining</a>
+<a class="bg-vintage-wine text-warm-parchment px-8 py-3 font-label-caps uppercase text-center transition-all hover:brightness-110 active:opacity-80" href="#reservations">Reservations</a>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center justify-center overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" style="object-position: 75% center;" data-alt="The Pheasant Restaurant dining room and hospitality photography." src="images/hero.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background"></div>
+<div class="relative z-10 text-center px-margin-mobile">
+<p class="font-label-caps text-muted-gold uppercase mb-stack-md tracking-[0.2em]">Authentic Hospitality</p>
+<h1 class="font-display-lg text-display-lg text-warm-parchment max-w-3xl mx-auto">Book Your Experience</h1>
+</div>
+</section>
+<!-- Reservation & Context Section -->
+<section id="reservations" class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop -mt-24 relative z-20 mb-section-gap scroll-mt-28">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Booking Form Panel -->
+<div class="lg:col-span-7 glass-panel p-stack-lg md:p-12">
+<h2 class="font-headline-md text-headline-md text-warm-parchment mb-stack-lg">Reserve a Table</h2>
+<form id="reservation-form" class="space-y-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-2">
+<label class="font-label-caps text-muted-gold uppercase">Date</label>
+<input class="w-full bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-muted-gold uppercase">Time</label>
+<select class="w-full bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2">
+<option class="bg-surface">Select Time</option>
+<option class="bg-surface">12:00 PM</option>
+<option class="bg-surface">1:30 PM</option>
+<option class="bg-surface">6:00 PM</option>
+<option class="bg-surface">7:30 PM</option>
+<option class="bg-surface">8:30 PM</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-2">
+<label class="font-label-caps text-muted-gold uppercase">Guests</label>
+<select class="w-full bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2">
+<option class="bg-surface">1 Guest</option>
+<option class="bg-surface">2 Guests</option>
+<option class="bg-surface">4 Guests</option>
+<option class="bg-surface">6+ Guests</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-muted-gold uppercase">Contact Phone</label>
+<input class="w-full bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2" placeholder="028 XXXX XXXX" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-muted-gold uppercase">Special Requirements</label>
+<input class="w-full bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2" placeholder="Dietary notes, celebrations..." type="text"/>
+</div>
+<div class="pt-stack-lg">
+<button class="w-full bg-vintage-wine text-warm-parchment py-5 font-label-caps uppercase tracking-widest hover:brightness-110 transition-all" type="submit">
+                                Confirm Booking Request
+                            </button>
+</div>
+<p class="text-on-surface-variant font-body-md text-center italic mt-stack-md">
+                            *Note: A £20 deposit per head may be required for specialty evenings.
+                        </p>
+</form>
+</div>
+<!-- Info Side Panel -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<div id="hours" class="bg-surface-container-low p-stack-lg border border-muted-gold/10 scroll-mt-28">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-md">Opening Hours</h3>
+<div class="space-y-stack-sm">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-muted-gold">TUES - THURS</span>
+<div class="dot-leader"></div>
+<span class="font-body-md">12PM - 8PM</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-muted-gold">FRI - SAT</span>
+<div class="dot-leader"></div>
+<span class="font-body-md">12PM - 9PM</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-muted-gold">SUNDAY</span>
+<div class="dot-leader"></div>
+<span class="font-body-md">12PM - 8PM</span>
+</div>
+</div>
+</div>
+<div class="bg-primary-container/20 p-stack-lg border border-primary/20">
+<div class="flex flex-col sm:flex-row gap-gutter items-center">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-warm-parchment mb-stack-md">Simply Seafood</h3>
+<p class="text-on-surface-variant mb-stack-lg leading-relaxed">Join us Friday, 5th June for a five-course coastal evening with paired wines and a welcome drink on arrival.</p>
+<a class="inline-flex items-center gap-2 text-primary hover:underline" href="tel:02892638056">
+<span class="material-symbols-outlined">call</span>
+<span class="font-label-caps">Call to Book: 028 9263 8056</span>
+</a>
+</div>
+<div class="w-full sm:w-2/5 overflow-hidden border border-muted-gold/10 bg-surface-container-low">
+<img class="w-full h-auto block grayscale hover:grayscale-0 transition-all duration-700" data-alt="Official Simply Seafood event menu artwork from The Pheasant." src="images/seafood_menu.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu & Wine Section -->
+<section id="menu" class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap scroll-mt-28">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-5">
+<p class="font-label-caps text-muted-gold uppercase mb-stack-sm tracking-widest">Seasonal Cooking</p>
+<h2 class="font-headline-lg text-headline-lg text-warm-parchment mb-stack-md">The Menu</h2>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                            Pub classics, coastal specials, and carefully sourced produce shaped around the season. Call ahead for daily dishes and dietary requests.
+                        </p>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="border border-muted-gold/10 p-stack-lg bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md text-warm-parchment mb-stack-md">Sunday Roast</h3>
+<p class="font-label-caps text-muted-gold mb-stack-sm">From 12PM</p>
+<p class="text-on-surface-variant">Slow-roasted meats, seasonal vegetables, proper gravy, and all the trimmings.</p>
+</div>
+<div class="border border-muted-gold/10 p-stack-lg bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md text-warm-parchment mb-stack-md">Simply Seafood</h3>
+<p class="font-label-caps text-muted-gold mb-stack-sm">Friday Evenings</p>
+<p class="text-on-surface-variant">A five-course coastal menu with paired wines and intimate service.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="wine" class="bg-surface-container-lowest py-section-gap scroll-mt-28">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<p class="font-label-caps text-muted-gold uppercase mb-stack-sm tracking-widest">Cellar Selection</p>
+<h2 class="font-headline-lg text-headline-lg text-warm-parchment mb-stack-md">Wine List</h2>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                            Old-world favourites, confident reds, bright whites, celebratory bottles, and pairings chosen to sit naturally beside the kitchen's seafood and roast menus.
+                        </p>
+</div>
+<div class="border-l border-muted-gold/20 pl-stack-lg">
+<div class="flex justify-between items-end mb-stack-md">
+<span class="font-label-caps text-muted-gold">House White</span>
+<div class="dot-leader"></div>
+<span class="font-body-md">By the glass</span>
+</div>
+<div class="flex justify-between items-end mb-stack-md">
+<span class="font-label-caps text-muted-gold">Pinot Noir</span>
+<div class="dot-leader"></div>
+<span class="font-body-md">Bottle</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-muted-gold">Champagne</span>
+<div class="dot-leader"></div>
+<span class="font-body-md">Celebration</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Current Promotions Section -->
+<section id="offers" class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap scroll-mt-28">
+<div class="text-center mb-stack-lg">
+<p class="font-label-caps text-muted-gold uppercase mb-stack-sm tracking-widest">Current &amp; Ongoing Deals</p>
+<h2 class="font-headline-lg text-headline-lg text-warm-parchment">What's On Now</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<article class="border border-muted-gold/10 bg-surface-container-low">
+<img class="w-full aspect-[4/5] object-cover object-center" data-alt="Premium steak served on slate board at The Pheasant." src="images/steak_nights.png"/>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-warm-parchment mb-stack-sm">Steak Nights</h3>
+<p class="text-on-surface-variant">Choose from our Butchers Block selection of prime cuts, available Monday to Thursday evenings.</p>
+</div>
+</article>
+<article class="border border-muted-gold/10 bg-surface-container-low">
+<img class="w-full aspect-[4/5] object-cover object-center" data-alt="Bertha wood-burning oven at The Pheasant." src="images/bertha_oven.png"/>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-warm-parchment mb-stack-sm">Bertha Oven Menu</h3>
+<p class="text-on-surface-variant">Prime cuts and seafood cooked in our Bertha wood-burning oven to bring out natural flavour. Available alongside the full menu.</p>
+</div>
+</article>
+<article class="border border-muted-gold/10 bg-surface-container-low">
+<img class="w-full aspect-[4/5] object-cover object-center" data-alt="Gamekeepers Hatch takeaway from The Pheasant." src="images/gamekeepers_hatch.png"/>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-warm-parchment mb-stack-sm">Gamekeepers Hatch</h3>
+<p class="text-on-surface-variant mb-stack-md">Signature takeaway dishes crafted with the finest ingredients, from hearty game to succulent roasts.</p>
+<a class="inline-flex items-center gap-2 text-primary hover:underline text-sm" href="https://pay.yoello.com/v/pheasant1" target="_blank" rel="noreferrer">
+<span class="material-symbols-outlined" style="font-size:18px">shopping_bag</span>
+<span class="font-label-caps">Order Online</span>
+</a>
+</div>
+</article>
+<article class="border border-muted-gold/10 bg-surface-container-low">
+<img class="w-full aspect-[4/5] object-cover object-center" data-alt="Gift voucher dining experience at The Pheasant." src="images/gift_vouchers.png"/>
+<div class="p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-warm-parchment mb-stack-sm">Gift Vouchers</h3>
+<p class="text-on-surface-variant mb-stack-md">The perfect present — available in a range of values for menus or drinks. Order online today.</p>
+<a class="inline-flex items-center gap-2 text-primary hover:underline text-sm" href="https://thepheasantrestaurant.giftpro.co.uk/vouchers/monetary-voucher/" target="_blank" rel="noreferrer">
+<span class="material-symbols-outlined" style="font-size:18px">card_giftcard</span>
+<span class="font-label-caps">Buy a Voucher</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- Event Space Hire Section -->
+<section id="private-dining" class="bg-surface-container-lowest py-section-gap scroll-mt-28">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-stack-lg">
+<p class="font-label-caps text-muted-gold uppercase mb-stack-sm tracking-widest">Memorable Occasions</p>
+<h2 class="font-headline-lg text-headline-lg text-warm-parchment">Event Space Hire</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-stack-lg">
+<!-- Gamekeepers Loft -->
+<div class="group">
+<div class="overflow-hidden mb-stack-lg bg-surface">
+<img class="w-full aspect-[16/9] object-cover object-center group-hover:scale-105 transition-transform duration-1000" data-alt="Official Pheasant restaurant food and event photography." src="images/gamekeepers_loft.png"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-warm-parchment mb-4">Gamekeepers Loft</h3>
+<p class="font-label-caps text-muted-gold mb-4">Capacity: 30 - 90 Guests</p>
+<p class="text-on-surface-variant font-body-md mb-stack-lg leading-relaxed">
+                            A private sanctuary for those wishing to host a special occasion in a dedicated space. Perfect for family gatherings, celebrations, or business events, combining a discreet setting with our signature standards.
+                        </p>
+<button class="event-action inline-flex border border-muted-gold px-8 py-3 font-label-caps text-muted-gold hover:bg-muted-gold hover:text-background transition-colors uppercase" type="button" data-event-action="enquiry">
+                            Enquire Now
+                        </button>
+</div>
+<!-- Weddings -->
+<div class="group">
+<div class="overflow-hidden mb-stack-lg bg-surface">
+<img class="w-full aspect-[16/9] object-cover object-center group-hover:scale-105 transition-transform duration-1000" data-alt="Elegant weddings reception table settings." src="images/weddings.png"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-warm-parchment mb-4">Weddings</h3>
+<p class="font-label-caps text-muted-gold mb-4">Bespoke Experiences</p>
+<p class="text-on-surface-variant font-body-md mb-stack-lg leading-relaxed">
+                            Your wedding is the most important day of your life. Our dedicated coordinator will guide you from booking to the final toast, with an extensive range of menus tailored to your unique vision.
+                        </p>
+<button class="event-action inline-flex border border-muted-gold px-8 py-3 font-label-caps text-muted-gold hover:bg-muted-gold hover:text-background transition-colors uppercase" type="button" data-event-action="brochure">
+                            Download Brochure
+                        </button>
+</div>
+</div>
+<div id="event-response-panel" class="hidden mt-12 border border-primary/20 bg-primary-container/20 p-stack-lg md:p-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-5">
+<p id="event-response-kicker" class="font-label-caps text-muted-gold uppercase mb-stack-sm tracking-widest">Private Dining</p>
+<h3 id="event-response-title" class="font-headline-md text-headline-md text-warm-parchment mb-stack-md">Tell us about your occasion</h3>
+<p id="event-response-copy" class="text-on-surface-variant leading-relaxed">Share a few details and our team will help shape the right space, menu, and next steps.</p>
+</div>
+<form id="event-response-form" class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<input class="bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2" placeholder="Your Name" required type="text"/>
+<input class="bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2" placeholder="Email Address" required type="email"/>
+<input class="bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2" placeholder="Preferred Date" type="text"/>
+<input class="bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2" placeholder="Guest Count" type="text"/>
+<textarea class="md:col-span-2 bg-transparent border-0 border-b border-muted-gold/40 text-on-background focus:ring-0 focus:border-primary px-0 py-2" placeholder="Occasion notes" rows="3"></textarea>
+<button class="md:col-span-2 bg-vintage-wine text-warm-parchment py-4 font-label-caps uppercase tracking-widest hover:brightness-110 transition-all" type="submit">Send Request</button>
+<p id="event-form-status" class="hidden md:col-span-2 text-primary font-label-caps uppercase"></p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Story Section -->
+<section id="story" class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap border-t border-muted-gold/10 scroll-mt-28">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-5">
+<p class="font-label-caps text-muted-gold uppercase mb-stack-sm tracking-widest">Our Story</p>
+<h2 class="font-headline-lg text-headline-lg text-primary">The Pheasant</h2>
+</div>
+<div class="md:col-span-7">
+<p class="font-body-lg text-body-lg text-on-background leading-relaxed mb-stack-md">
+                            A family-run restaurant owned by The Pattersons, built on more than 45 years of genuine hospitality, seasonal cooking, and carefully hosted occasions.
+                        </p>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                            From relaxed lunches to private celebrations, the house style is warm, attentive, and quietly polished.
+                        </p>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section id="reviews" class="bg-surface-container-lowest py-section-gap scroll-mt-28">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<p class="font-label-caps text-muted-gold uppercase mb-stack-sm tracking-widest">What Our Guests Say</p>
+<h2 class="font-headline-lg text-headline-lg text-warm-parchment mb-stack-md">Reviews</h2>
+<div class="flex items-center justify-center gap-3 mb-stack-md">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings:'FILL' 1;color:#F7B928">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings:'FILL' 1;color:#F7B928">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings:'FILL' 1;color:#F7B928">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings:'FILL' 1;color:#F7B928">star</span>
+<span class="material-symbols-outlined text-yellow-400" style="font-variation-settings:'FILL' 0;color:#F7B928">star_half</span>
+</div>
+<span class="font-headline-md text-headline-md text-warm-parchment">4.4</span>
+<span class="text-on-surface-variant font-body-md">on Google</span>
+</div>
+<p class="text-on-surface-variant font-body-md">8,200+ followers on Facebook · 5,800+ check-ins · Featured in the Michelin "Eating Out in Pubs" guide</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-panel p-8">
+<div class="flex gap-1 mb-stack-md">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+</div>
+<p class="text-on-background font-body-md leading-relaxed mb-stack-md italic">"Excellent food and warm, welcoming atmosphere. The seasonal menu was outstanding — every dish was perfectly prepared. A firm favourite for special occasions."</p>
+<p class="font-label-caps text-muted-gold">— Google Review</p>
+</div>
+<div class="glass-panel p-8">
+<div class="flex gap-1 mb-stack-md">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+</div>
+<p class="text-on-background font-body-md leading-relaxed mb-stack-md italic">"The best restaurant in County Down. Fresh, locally sourced ingredients and the Bertha oven dishes are incredible. Service is always friendly and efficient."</p>
+<p class="font-label-caps text-muted-gold">— Google Review</p>
+</div>
+<div class="glass-panel p-8">
+<div class="flex gap-1 mb-stack-md">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;color:#F7B928;font-size:16px">star</span>
+</div>
+<p class="text-on-background font-body-md leading-relaxed mb-stack-md italic">"Lovely visit for a family celebration. The private dining space was perfect and the wedding coordinator was incredibly helpful. Rustic charm with high-standard cooking."</p>
+<p class="font-label-caps text-muted-gold">— Google Review</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact CTA -->
+<section id="contact" class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap border-t border-muted-gold/10 scroll-mt-28">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-center">
+<div class="text-center md:text-left">
+<p class="font-label-caps text-muted-gold mb-2">Speak With Us</p>
+<a class="font-headline-md text-headline-md text-on-background hover:text-primary transition-colors" href="tel:02892638056">028 9263 8056</a>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 bg-muted-gold/10 rounded-full flex items-center justify-center mx-auto mb-stack-md">
+<span class="material-symbols-outlined text-muted-gold" style="font-size: 32px;">mail</span>
+</div>
+<p class="font-label-caps text-muted-gold mb-2">Email Inquiries</p>
+<a class="font-body-lg text-body-lg text-on-background" href="mailto:Info@thepheasantrestaurant.co.uk">Info@thepheasantrestaurant.co.uk</a>
+</div>
+<div class="text-center md:text-right">
+<p class="font-label-caps text-muted-gold mb-2">Visit Us</p>
+<p class="font-body-md text-on-surface-variant">410 Upper Ballynahinch Rd,<br/>Annahilt, BT26 6NR</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-muted-gold/10 w-full py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+<div>
+<div class="font-headline-lg text-headline-lg text-primary mb-stack-lg">The Pheasant</div>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                    A family-run business owned by The Pattersons with over 45 years in genuine hospitality and seasonal excellence.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-muted-gold mb-stack-sm">Explore</h4>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#contact">Location &amp; Directions</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#hours">Opening Hours</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact Us</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="mailto:Info@thepheasantrestaurant.co.uk?subject=Careers at The Pheasant">Careers</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="mailto:Info@thepheasantrestaurant.co.uk?subject=Press enquiry">Press</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-muted-gold mb-stack-sm">Newsletter</h4>
+<p class="font-body-md text-on-surface-variant mb-4">Subscribe for exclusive event invites and seasonal menu updates.</p>
+<form id="newsletter-form" class="flex">
+<input class="bg-transparent border border-muted-gold/40 px-4 py-2 flex-grow focus:outline-none focus:border-primary text-on-background" placeholder="Email Address" type="email" required/>
+<button class="bg-primary text-on-primary-fixed px-6 py-2 font-label-caps uppercase text-sm">Join</button>
+</form>
+<p id="newsletter-status" class="hidden text-primary font-label-caps uppercase"></p>
+<div class="flex gap-stack-md mt-stack-lg justify-center md:justify-start">
+<a class="text-muted-gold hover:text-primary" href="https://www.facebook.com/thepheasantrestaurant/?locale=en_GB" target="_blank" rel="noreferrer">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="text-muted-gold hover:text-primary" href="https://www.instagram.com/pheasantrestaurant" target="_blank" rel="noreferrer">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-stack-lg pt-stack-lg border-t border-muted-gold/5 text-center text-on-surface-variant font-body-md opacity-60">
+            © 2026 The Pheasant. All Rights Reserved.
+        </div>
+</footer>
+<script>
+        // Simple micro-interaction for form inputs
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            const label = input.parentElement.querySelector('label');
+            if (!label) return;
+            input.addEventListener('focus', () => {
+                label.style.color = '#ffb2bc';
+            });
+            input.addEventListener('blur', () => {
+                label.style.color = '#C6B083';
+            });
+        });
+
+        const mobileMenuButton = document.querySelector('#mobile-menu-button');
+        const mobileMenu = document.querySelector('#mobile-menu');
+        mobileMenuButton?.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden', isOpen);
+            mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', event => {
+                const targetId = link.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                event.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, '', targetId);
+            });
+        });
+
+        const reservationForm = document.querySelector('#reservation-form');
+        reservationForm?.addEventListener('submit', event => {
+            event.preventDefault();
+            let status = document.querySelector('#booking-status');
+            if (!status) {
+                status = document.createElement('p');
+                status.id = 'booking-status';
+                status.className = 'text-primary font-label-caps text-center uppercase';
+                reservationForm.appendChild(status);
+            }
+            status.textContent = 'Thanks - your booking request is ready to be confirmed by phone.';
+            status.classList.remove('hidden');
+        });
+
+        const eventPanel = document.querySelector('#event-response-panel');
+        const eventKicker = document.querySelector('#event-response-kicker');
+        const eventTitle = document.querySelector('#event-response-title');
+        const eventCopy = document.querySelector('#event-response-copy');
+        const eventForm = document.querySelector('#event-response-form');
+        const eventStatus = document.querySelector('#event-form-status');
+
+        const eventContent = {
+            enquiry: {
+                kicker: 'Private Dining',
+                title: 'Tell us about your occasion',
+                copy: 'Share a few details and our team will help shape the right space, menu, and next steps.'
+            },
+            brochure: {
+                kicker: 'Wedding Brochure',
+                title: 'Request the wedding brochure',
+                copy: 'Leave your details and we will prepare the brochure request with space, menu, and coordination information.'
+            }
+        };
+
+        document.querySelectorAll('.event-action').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = eventContent[button.dataset.eventAction] || eventContent.enquiry;
+                eventKicker.textContent = content.kicker;
+                eventTitle.textContent = content.title;
+                eventCopy.textContent = content.copy;
+                eventStatus.classList.add('hidden');
+                eventPanel.classList.remove('hidden');
+                eventPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+
+        eventForm?.addEventListener('submit', event => {
+            event.preventDefault();
+            eventStatus.textContent = 'Thanks - your request is ready for the events team.';
+            eventStatus.classList.remove('hidden');
+            eventForm.reset();
+        });
+
+        const newsletterForm = document.querySelector('#newsletter-form');
+        const newsletterStatus = document.querySelector('#newsletter-status');
+        newsletterForm?.addEventListener('submit', event => {
+            event.preventDefault();
+            newsletterStatus.textContent = 'Thanks - you are on the list.';
+            newsletterStatus.classList.remove('hidden');
+            newsletterForm.reset();
+        });
+    </script>
+</body></html>

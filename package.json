@@ -1,0 +1,10 @@
+{
+  "name": "the-pheasant-reservations",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static reservations and events page for The Pheasant.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  }
+}
