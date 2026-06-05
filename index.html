@@ -59,9 +59,9 @@ tailwind.config = {
 
 <!-- ===== HEADER ===== -->
 <header class="sticky top-0 z-50 bg-charcoal/85 backdrop-blur-md border-b border-ink/10">
-  <div class="max-w-container mx-auto px-5 md:px-10 flex items-center gap-6 h-28">
+  <div class="max-w-container mx-auto px-5 md:px-10 flex items-center gap-3 h-16 md:h-28">
     <a href="#top" class="shrink-0 flex items-center">
-      <img src="images/The pheasant logo.svg" alt="The Pheasant" class="h-20 w-auto"/>
+      <img src="images/The pheasant logo.svg" alt="The Pheasant" class="h-10 md:h-20 w-auto"/>
     </a>
     <nav class="hidden lg:flex flex-1 justify-center items-center gap-8">
       <a href="#menu" class="font-serif text-[18px] text-ink hover:text-claret transition-colors">Menu</a>
@@ -75,7 +75,7 @@ tailwind.config = {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         028 9263 8056
       </a>
-      <a href="#book" class="inline-flex items-center bg-claret hover:bg-claret-deep text-cream label text-xs px-6 py-3 transition-colors">Book a Table</a>
+      <a href="#book" class="inline-flex items-center bg-claret hover:bg-claret-deep text-cream label text-xs px-4 py-2 md:px-6 md:py-3 transition-colors">Book a Table</a>
       <button id="menu-btn" class="lg:hidden p-2 text-ink" aria-label="Menu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -145,26 +145,11 @@ tailwind.config = {
       <h2 class="font-serif text-4xl md:text-[42px] leading-tight">Book your table</h2>
       <p class="mt-4 text-cream/70 leading-relaxed">Tuesday to Sunday. For parties of eight or more, or specialty evenings, give us a ring on <a href="tel:02892638056" class="underline decoration-gold-soft/60 underline-offset-4 hover:text-gold-soft">028 9263 8056</a>.</p>
     </div>
-    <form id="booking-form" class="lg:col-span-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:items-end">
-      <label class="flex flex-col gap-2">
-        <span class="label text-[10px] text-gold-soft">Date</span>
-        <input type="date" class="bg-transparent border-0 border-b border-cream/30 focus:border-gold-soft focus:ring-0 text-cream px-0 py-2 [color-scheme:dark]"/>
-      </label>
-      <label class="flex flex-col gap-2">
-        <span class="label text-[10px] text-gold-soft">Time</span>
-        <select class="bg-transparent border-0 border-b border-cream/30 focus:border-gold-soft focus:ring-0 text-cream px-0 py-2">
-          <option class="text-ink">12:00</option><option class="text-ink">13:00</option><option class="text-ink">18:00</option><option class="text-ink">19:30</option><option class="text-ink">20:30</option>
-        </select>
-      </label>
-      <label class="flex flex-col gap-2">
-        <span class="label text-[10px] text-gold-soft">Guests</span>
-        <select class="bg-transparent border-0 border-b border-cream/30 focus:border-gold-soft focus:ring-0 text-cream px-0 py-2">
-          <option class="text-ink">2 guests</option><option class="text-ink">3 guests</option><option class="text-ink">4 guests</option><option class="text-ink">5 guests</option><option class="text-ink">6+ guests</option>
-        </select>
-      </label>
-      <button type="submit" class="bg-gold hover:bg-gold-soft text-forest-deep label text-xs px-6 py-3.5 transition-colors">Check Availability</button>
-      <p id="booking-status" class="hidden sm:col-span-2 lg:col-span-4 text-gold-soft text-sm font-medium"></p>
-    </form>
+    <div class="lg:col-span-8">
+      <div style="max-width:520px;border-radius:4px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.08);">
+        <iframe src="https://booking.resdiary.com/widget/Standard/ThePheasantBarRestaurant/61528" width="100%" height="520" frameborder="0" style="border:none;display:block;"></iframe>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -189,7 +174,7 @@ tailwind.config = {
         </div>
       </article>
       <article class="ph-card bg-charcoal-card border border-ink/15 overflow-hidden rounded-xl reveal">
-        <img src="images/seafood_menu.jpg" alt="Simply Seafood" class="w-full h-52 object-cover img-warm"/>
+        <img src="images/seafood1.jpeg" alt="Simply Seafood" class="w-full h-52 object-cover img-warm"/>
         <div class="p-6">
           <h3 class="font-serif text-2xl text-ink">Simply Seafood</h3>
           <p class="label text-[10px] text-gold mt-2 mb-3">Friday evenings</p>
@@ -225,20 +210,20 @@ tailwind.config = {
         <h2 class="font-serif text-4xl md:text-5xl text-ink">Reasons to visit</h2>
       </div>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <article class="bg-charcoal-card border border-ink/15 p-7 flex flex-col rounded-xl reveal">
+    <div class="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pb-4 sm:pb-0 -mx-5 px-5 sm:mx-0 sm:px-0 scrollbar-hide">
+      <article class="bg-charcoal-card border border-ink/15 p-7 flex flex-col rounded-xl reveal shrink-0 w-[78vw] sm:w-auto snap-start">
         <span class="label text-[10px] text-gold mb-3">Takeaway</span>
         <h3 class="font-serif text-2xl text-ink mb-2">Gamekeeper's Hatch</h3>
         <p class="text-ink-soft leading-relaxed flex-1">Signature dishes to take home — from hearty game to succulent roasts.</p>
         <a href="https://pay.yoello.com/v/pheasant1" target="_blank" rel="noreferrer" class="mt-5 label text-[11px] text-claret hover:text-claret-deep inline-flex items-center gap-2">Order Online →</a>
       </article>
-      <article class="bg-charcoal-card border border-ink/15 p-7 flex flex-col rounded-xl reveal">
+      <article class="bg-charcoal-card border border-ink/15 p-7 flex flex-col rounded-xl reveal shrink-0 w-[78vw] sm:w-auto snap-start">
         <span class="label text-[10px] text-gold mb-3">Gifting</span>
         <h3 class="font-serif text-2xl text-ink mb-2">Gift Vouchers</h3>
         <p class="text-ink-soft leading-relaxed flex-1">The perfect present, in a range of values — for menus or drinks.</p>
         <a href="https://thepheasantrestaurant.giftpro.co.uk/vouchers/monetary-voucher/" target="_blank" rel="noreferrer" class="mt-5 label text-[11px] text-claret hover:text-claret-deep inline-flex items-center gap-2">Buy a Voucher →</a>
       </article>
-      <article class="bg-charcoal-card border border-ink/15 text-ink p-7 flex flex-col rounded-xl reveal">
+      <article class="bg-charcoal-card border border-ink/15 text-ink p-7 flex flex-col rounded-xl reveal shrink-0 w-[78vw] sm:w-auto snap-start">
         <span class="label text-[10px] text-gold-soft mb-3">Midweek</span>
         <h3 class="font-serif text-2xl mb-2">Early Bird</h3>
         <p class="text-ink-soft leading-relaxed flex-1">Two and three-course menus at gentle prices, Tuesday to Friday.</p>
@@ -259,18 +244,18 @@ tailwind.config = {
       <span>· 8,200+ on Facebook</span>
     </div>
   </div>
-  <div class="grid md:grid-cols-3 gap-6">
-    <figure class="bg-charcoal-card border border-ink/15 p-8 rounded-xl reveal">
+  <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-5 px-5 md:mx-0 md:px-0 scrollbar-hide">
+    <figure class="bg-charcoal-card border border-ink/15 p-8 rounded-xl reveal shrink-0 w-[78vw] md:w-auto snap-start">
       <div class="text-gold mb-4">★★★★★</div>
       <blockquote class="font-serif text-xl leading-relaxed text-ink italic">"Excellent food and a warm, welcoming atmosphere. Every dish was perfectly prepared. Our firm favourite for special occasions."</blockquote>
       <figcaption class="label text-[10px] text-ink-soft mt-5">— Google Review</figcaption>
     </figure>
-    <figure class="bg-charcoal-card border border-ink/15 p-8 rounded-xl reveal">
+    <figure class="bg-charcoal-card border border-ink/15 p-8 rounded-xl reveal shrink-0 w-[78vw] md:w-auto snap-start">
       <div class="text-gold mb-4">★★★★★</div>
       <blockquote class="font-serif text-xl leading-relaxed text-ink italic">"The best restaurant in County Down. Fresh, locally sourced, and the Bertha oven dishes are incredible. Always friendly service."</blockquote>
       <figcaption class="label text-[10px] text-ink-soft mt-5">— Google Review</figcaption>
     </figure>
-    <figure class="bg-charcoal-card border border-ink/15 p-8 rounded-xl reveal">
+    <figure class="bg-charcoal-card border border-ink/15 p-8 rounded-xl reveal shrink-0 w-[78vw] md:w-auto snap-start">
       <div class="text-gold mb-4">★★★★★</div>
       <blockquote class="font-serif text-xl leading-relaxed text-ink italic">"Lovely visit for a family celebration. The private dining space was perfect and the team incredibly helpful. Rustic charm, high standards."</blockquote>
       <figcaption class="label text-[10px] text-ink-soft mt-5">— Google Review</figcaption>
@@ -292,7 +277,6 @@ tailwind.config = {
       <p class="mt-5 text-cream/75 text-lg leading-relaxed">The Gamekeeper's Loft seats 30 to 90 guests — a private space for family gatherings, celebrations and business events. For weddings, our coordinator guides you from the first booking to the final toast.</p>
       <div class="mt-8 flex flex-wrap gap-4">
         <a href="mailto:Info@thepheasantrestaurant.co.uk?subject=Private dining enquiry" class="inline-flex items-center bg-gold hover:bg-gold-soft text-forest-deep label text-xs px-7 py-3.5 transition-colors">Enquire Now</a>
-        <a href="mailto:Info@thepheasantrestaurant.co.uk?subject=Wedding brochure" class="inline-flex items-center border border-cream/40 hover:bg-cream/10 text-cream label text-xs px-7 py-3.5 transition-colors">Wedding Brochure</a>
       </div>
     </div>
   </div>
@@ -354,7 +338,7 @@ tailwind.config = {
 <footer class="bg-[#2A2520] text-parchment">
   <div class="max-w-container mx-auto px-5 md:px-10 py-16 grid md:grid-cols-3 gap-10">
     <div>
-      <img src="images/The pheasant logo.svg" alt="The Pheasant" class="h-16 w-auto logo-cream mb-5"/>
+      <img src="images/The pheasant logo.svg" alt="The Pheasant" class="h-16 w-auto mb-5"/>
       <p class="text-parchment/60 leading-relaxed max-w-xs">A family-run restaurant owned by the Pattersons, with over 45 years of genuine hospitality in the heart of Annahilt.</p>
     </div>
     <div class="flex flex-col gap-3">
