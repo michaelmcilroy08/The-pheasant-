@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Pheasant · Menu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#F6EFE2",
+        cream: "#FCF8F0",
+        ink: "#E8E0D4",
+        "ink-soft": "#A89F97",
+        claret: "#8E2A2C",
+        "claret-deep": "#6E1F21",
+        gold: "#B0843C",
+        "gold-soft": "#C9A463",
+        charcoal: "#161616",
+        "charcoal-card": "#1E1E1E",
+        "charcoal-deep": "#0F0F0F"
+      },
+      fontFamily: {
+        serif: ["Spectral", "Georgia", "serif"],
+        sans: ["Mulish", "system-ui", "sans-serif"]
+      },
+      maxWidth: { container: "1240px" }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .label { font-family: "Mulish", sans-serif; text-transform: uppercase; letter-spacing: 0.22em; font-weight: 600; }
+  .dot-leader { flex: 1; border-bottom: 1px dotted rgba(176,132,60,0.35); margin: 0 10px 5px; }
+  .section-rule { border-color: rgba(176,132,60,0.2); }
+  .tag { font-family: "Mulish", sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; border: 1px solid currentColor; padding: 1px 5px; border-radius: 2px; vertical-align: middle; margin-left: 4px; opacity: 0.7; }
+</style>
+</head>
+<body class="bg-charcoal text-ink font-sans">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-charcoal/90 backdrop-blur-md border-b border-ink/10">
+  <div class="max-w-container mx-auto px-5 md:px-10 flex items-center justify-between h-16 md:h-20">
+    <a href="index.html" class="flex items-center gap-2 text-ink-soft hover:text-gold-soft transition-colors label text-[10px]">
+      ← Back to Site
+    </a>
+    <img src="images/The pheasant logo.svg" alt="The Pheasant" class="h-10 md:h-14 w-auto"/>
+    <a href="#" class="label text-[10px] text-gold-soft">Reservations</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="bg-charcoal-deep py-16 md:py-20 text-center border-b border-ink/10">
+  <p class="label text-gold text-xs mb-4">Restaurant & Bar</p>
+  <h1 class="font-serif text-5xl md:text-6xl text-ink mb-4">Our Menu</h1>
+  <p class="text-ink-soft max-w-md mx-auto leading-relaxed px-5">Locally sourced, seasonally inspired. Many dishes can be adapted for dietary requirements — please ask your server.</p>
+  <div class="flex items-center justify-center gap-6 mt-8 text-[11px] label text-ink-soft">
+    <span><span class="tag text-gold-soft">V</span> Vegetarian</span>
+    <span><span class="tag text-gold-soft">VE</span> Vegan</span>
+    <span><span class="tag text-gold-soft">GF</span> Gluten Free</span>
+  </div>
+</section>
+
+<div class="max-w-container mx-auto px-5 md:px-10 py-16 md:py-20">
+
+  <!-- TWO COLUMN LAYOUT -->
+  <div class="grid lg:grid-cols-2 gap-x-16 gap-y-16">
+
+    <!-- LEFT COLUMN -->
+    <div class="space-y-14">
+
+      <!-- SHARING NIBBLES -->
+      <section>
+        <div class="flex items-center gap-4 mb-8">
+          <p class="label text-gold text-[10px] whitespace-nowrap">Sharing Nibbles</p>
+          <hr class="flex-1 section-rule"/>
+        </div>
+        <div class="space-y-7">
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Warm Breads <span class="tag text-gold-soft">V</span><span class="tag text-gold-soft">VE</span><span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base whitespace-nowrap">£7.5 <span class="text-ink-soft text-xs font-sans">/ £12.5</span></span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Black olive tapenade, chilli hummus & house butter. <span class="text-ink-soft/60 text-xs">(serves 1 / serves 2)</span></p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Corn Nachos <span class="tag text-gold-soft">V</span><span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base whitespace-nowrap">£7.5 <span class="text-ink-soft text-xs font-sans">/ £13</span></span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Melted cheddar, Ranch rio, jalapeño, lime crème fraiche, spring onion. <span class="text-ink-soft/60 text-xs">(serves 1 / serves 2)</span></p>
+            <p class="text-claret text-xs mt-1 label tracking-wide">Add BBQ Pulled Pork +£3</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- STARTERS -->
+      <section>
+        <div class="flex items-center gap-4 mb-8">
+          <p class="label text-gold text-[10px] whitespace-nowrap">Starters & Small Plates</p>
+          <hr class="flex-1 section-rule"/>
+        </div>
+        <div class="space-y-7">
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Honey Chilli Chicken</h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£11</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Watermelon, mint & coriander salad, nam jim dressing</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Mac 'n' Cheese</h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£12</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Louisiana BBQ pulled pork, mac 'n' cheese, roast chicken crumb</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Pina Colada Prawns <span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£13</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Prawn cocktail with pineapple and coconut, shredded gem, Mrs Patterson's homemade wheaten</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Shanghai Cauliflower <span class="tag text-gold-soft">V</span><span class="tag text-gold-soft">VE</span><span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£11</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Spiced crispy cauliflower, soy dipping sauce, satay emulsion</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Belfast Ham Fritters</h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£11</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">3 cheese fondue, pickled red onion, chicory leaves</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Bertha Roasted Corn <span class="tag text-gold-soft">V</span><span class="tag text-gold-soft">VE</span><span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£11</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Spiced corn on the cob, burnt onion & tomato ketchup, apple & fennel salad</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Panko Breaded Brie <span class="tag text-gold-soft">V</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£12</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Breaded fried brie, candied nuts, golden raisin pureé</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MAIN COURSES -->
+      <section>
+        <div class="flex items-center gap-4 mb-8">
+          <p class="label text-gold text-[10px] whitespace-nowrap">Main Courses</p>
+          <hr class="flex-1 section-rule"/>
+        </div>
+        <div class="space-y-7">
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">8 Hour Beef Brisket Lasagne</h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£21</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Pomodoro ragu, house Caesar, garlic butter ciabatta</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Hillsborough Ale Battered Cod</h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£22</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Rosemary & sea salt chips, mushy pea pureé, homemade tartar sauce</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Garden Pea & Pinenut Risotto <span class="tag text-gold-soft">V</span><span class="tag text-gold-soft">VE</span><span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£20</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Crumbled feta, lemon oil & charred courgette</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Lisdergan Pork & Apple Sausages</h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£21</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Caramelised onion pomme pureé, fried cabbage & bacon, red wine jus, tobacco onions</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Indian Style Chicken Korma <span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£24</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Creamy coconut & almond curry, turmeric rice, chaat, flatbread</p>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="space-y-14">
+
+      <!-- BERTHA GRILL -->
+      <section>
+        <div class="flex items-center gap-4 mb-2">
+          <p class="label text-gold text-[10px] whitespace-nowrap">Bertha Wood Burning Grill</p>
+          <hr class="flex-1 section-rule"/>
+        </div>
+        <p class="text-ink-soft text-sm leading-relaxed mb-8">Cooked on our wood burning grill, maximising flavours, aromas & textures of all types of meats, fish & vegetables.</p>
+        <div class="space-y-7">
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Shorthorn Beef & Bone Marrow Burger <span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£20</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Shin, rump & brisket, lettuce, tomato, gherkin, mayo, tobacco onions, Ballymaloe relish, side of choice</p>
+            <p class="text-claret text-xs mt-1 label tracking-wide">Add Bacon & Cheese +£3 · Add BBQ Pulled Pork +£3</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline flex-wrap gap-y-1">
+              <h3 class="font-serif text-lg text-ink mr-2">The Pheasant Steaks <span class="tag text-gold-soft">GF</span></h3>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Lisdergan Butchers, local Irish herds, watercress & shallot salad, tobacco onions, choice of sauce & side</p>
+            <div class="mt-3 space-y-1">
+              <div class="flex items-baseline"><span class="text-sm text-ink">6oz Sirloin</span><span class="dot-leader"></span><span class="font-serif text-gold-soft">£28</span></div>
+              <div class="flex items-baseline"><span class="text-sm text-ink">8oz Ribeye</span><span class="dot-leader"></span><span class="font-serif text-gold-soft">£34</span></div>
+              <div class="flex items-baseline"><span class="text-sm text-ink">12oz Sirloin</span><span class="dot-leader"></span><span class="font-serif text-gold-soft">£36</span></div>
+            </div>
+            <p class="text-claret text-xs mt-2 label tracking-wide">Additional Toppings £8 — Cowboy butter shrimp · Black pudding & fried egg · Blue cheese & chorizo melt</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Wings 'n' Things <span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£26</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Marinated chicken wings, pork belly slices, charred corn on the cob, house slaw & piri piri fries</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Minted Lamb Chops <span class="tag text-gold-soft">GF</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£28</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Carnreagh Cottage Farm champ, chargrilled vegetables, chasseur sauce</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Portavogie Prawn Linguine <span class="tag text-gold-soft">V</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£29</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Prawn pasta with chilli garlic lemon & herb, garlic toast</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline">
+              <h3 class="font-serif text-lg text-ink">Fivemiletown Goats Cheese <span class="tag text-gold-soft">V</span></h3>
+              <span class="dot-leader"></span>
+              <span class="font-serif text-gold-soft text-base">£16</span>
+            </div>
+            <p class="text-ink-soft text-sm leading-relaxed mt-1">Roquito pepper & red onion marmalade pizza with chilli & garlic aioli</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MAD ABOUT MEAT -->
+      <section class="bg-charcoal-card border border-gold/20 rounded-xl p-7">
+        <p class="label text-gold text-[10px] mb-3">Sharing Feast</p>
+        <h3 class="font-serif text-2xl text-ink mb-3">Mad About Meat</h3>
+        <p class="text-ink-soft text-sm leading-relaxed mb-4">Two 6oz sirloin, marinated pork belly, honey chilli chicken, two sides, two sauces, tobacco onions</p>
+        <div class="flex items-baseline">
+          <span class="font-serif text-3xl text-gold-soft">£49</span>
+          <span class="text-ink-soft text-sm ml-3">per table</span>
+        </div>
+        <p class="text-ink-soft/60 text-xs mt-3 label tracking-wide">Tue–Thu 12–8pm · Fri 12–9pm</p>
+      </section>
+
+      <!-- SIDES & SAUCES -->
+      <div class="grid sm:grid-cols-2 gap-8">
+        <section>
+          <div class="flex items-center gap-4 mb-6">
+            <p class="label text-gold text-[10px] whitespace-nowrap">Sides</p>
+            <hr class="flex-1 section-rule"/>
+          </div>
+          <p class="label text-[10px] text-gold-soft mb-4">All £5</p>
+          <ul class="space-y-2 text-sm text-ink-soft">
+            <li>Skin on Fries</li>
+            <li>Criss Cross Fries</li>
+            <li>Garlic Hand Cuts</li>
+            <li>Mashed Potato</li>
+            <li>House Salad</li>
+            <li>Caesar Salad</li>
+            <li>Market Vegetables</li>
+            <li>Tobacco Onions</li>
+            <li>Chunky Chips</li>
+            <li>Garlic Skinny Fries</li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="flex items-center gap-4 mb-6">
+            <p class="label text-gold text-[10px] whitespace-nowrap">Sauces</p>
+            <hr class="flex-1 section-rule"/>
+          </div>
+          <p class="label text-[10px] text-gold-soft mb-4">All £3 <span class="tag text-gold-soft">GF</span></p>
+          <ul class="space-y-2 text-sm text-ink-soft">
+            <li>Jack Daniels Peppercorn</li>
+            <li>Stilton & Blue Cheese</li>
+            <li>Forest Mushroom</li>
+            <li>Chimichurri</li>
+          </ul>
+        </section>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ALLERGEN NOTICE -->
+  <div class="mt-16 pt-8 border-t section-rule text-center">
+    <p class="text-ink-soft/60 text-xs leading-relaxed max-w-2xl mx-auto">Many of our dishes can be altered to suit any dietary requirements, however our kitchen is not an allergen free area and we cannot guarantee there will be no risk of cross contamination. Any dish marked GF will be altered to suit gluten free — please specify on arrival so your server is aware of any allergies.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER CTA -->
+<section class="bg-charcoal-deep border-t border-ink/10 py-14 text-center">
+  <p class="label text-gold text-xs mb-4">Ready to dine?</p>
+  <h2 class="font-serif text-4xl text-ink mb-6">Reserve your table</h2>
+  <a href="index.html#book" class="inline-flex items-center bg-claret hover:bg-claret-deep text-cream label text-xs px-8 py-4 transition-colors">Book a Table →</a>
+  <p class="text-ink-soft text-sm mt-5">Or call us on <a href="tel:02892638056" class="text-ink hover:text-gold-soft transition-colors">028 9263 8056</a></p>
+</section>
+
+</body>
+</html>
